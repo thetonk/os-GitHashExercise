@@ -13,5 +13,5 @@ if [[ ${#1} -lt 4 ]]; then
     exit 2
 fi
 
-output=$(echo -n "$1" | sha256sum)
+output=$(echo -n "$1" | sha256sum | cut -d " " -f 1)
 echo -n "$output" > hash_output.txt
